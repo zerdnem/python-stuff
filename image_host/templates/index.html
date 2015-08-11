@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Upload!{% endblock %}
+{% block body %}
+
+        <i class="fa fa-file-image-o" style="font-size:15em"></i><br /><br />
+		<form action="" method="post" enctype="multipart/form-data">
+    		<b>Select image(s) to upload</b><br />
+            <div class="fileUpload button bg-gray m1">
+                <span>Select Files...</span>
+                <input type="file" multiple="" name="file[]" id="file" class="upload">
+            </div><br/>
+
+    		<input type="submit" value="Upload Image(s)" name="submit" class="button m1">
+		</form>
+        <div id="file-list">
+            
+        </div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="bold center p2 white bg-{{ category }} rounded m1" style="display: inline-block;">
+                        {{ message }}
+                    </div><br/>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+{% endblock %}

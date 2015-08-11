@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link href="http://d2v52k3cl9vedd.cloudfront.net/basscss/6.1.6/basscss.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+	<div id = "wrapper">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+    <script type="text/javascript" src="{{ url_for('static', filename='upload.js') }}"></script>
+</html>
